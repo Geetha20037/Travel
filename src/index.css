@@ -1,0 +1,127 @@
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Segoe UI", sans-serif;
+  --color-brand: #f97316;
+  --color-navy: #101c3a;
+}
+
+:root {
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: #172033;
+  background: #f7f8fc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+::selection {
+  background: #fed7aa;
+  color: #101c3a;
+}
+
+.page-container {
+  width: min(1180px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.dark-mode {
+  color: #edf2ff;
+  background: #0b1224;
+  min-height: 100vh;
+}
+
+.dark-mode .surface {
+  background: #141f35;
+  color: #edf2ff;
+  border-color: #293650;
+}
+
+.dark-mode .muted {
+  color: #a5b4cf;
+}
+
+.dark-mode input,
+.dark-mode select,
+.dark-mode textarea {
+  background: #101a2e;
+  color: #edf2ff;
+  border-color: #34415b;
+}
+
+.dark-mode .soft-surface {
+  background: #101a2e;
+}
+
+.hero-grid {
+  background-image: radial-gradient(#cbd5e1 0.7px, transparent 0.7px);
+  background-size: 18px 18px;
+}
+
+.dark-mode .hero-grid {
+  background-image: radial-gradient(#34415b 0.7px, transparent 0.7px);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-9px); }
+}
+
+@keyframes shimmer {
+  from { background-position: 180% 0; }
+  to { background-position: -180% 0; }
+}
+
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #e2e8f0 25%, #f8fafc 50%, #e2e8f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@media (max-width: 640px) {
+  .page-container {
+    width: calc(100% - 28px);
+  }
+}
